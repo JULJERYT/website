@@ -99,12 +99,15 @@ async function updateWeather() {
 window.addEventListener('DOMContentLoaded', () => {
     detectClockFormat();
     animateTitle();
-    updateStatus();
-    updateTime();
-    updateWeather();
     updateVisitors();
     setInterval(updateTime, 60000);
     document.getElementById("dynamic-header").classList.remove("hidden");
     document.getElementById('static-header').classList.add("hidden");
     document.getElementById('warning').classList.add("hidden");
+
+    setTimeout(() => {
+        updateStatus();
+        updateTime();
+        updateWeather();
+    }, 1000);
 });
