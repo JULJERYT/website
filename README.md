@@ -22,3 +22,5 @@ Inspired by [this website](https://justfuckingusehtml.com/), I wanted my website
 *Javascript will be used very little, only for some easter eggs, animated &lt;title&gt; and basic stuff.
 
 It will **NEVER** be required to browse my website, i respect decision of users who have blocked scripts in their browser
+
+> ai could never.
