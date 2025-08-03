@@ -1,16 +1,24 @@
 # jul's website
-hi, jul here!
+Hi, jul here!
 
-inspired by [this website](https://justfuckingusehtml.com/) im rewriting my website from scratch in vanilla html css and js* **just like in good old days** - no tailwind, no nextjs, no nuxt, no astro, no svelte, no remix, no vue, no hugo, no jekyll, no react, no bootstrap, no vite, no webpack, no fancy shi
+Inspired by [this website](https://justfuckingusehtml.com/), I wanted my website written HTML, CSS and vanilla JS* **just like in good old days** - no Tailwind, no NextJS, no Nuxt, no Astro, no Svelte, no Remix, no Vue, no Hugo, no Jekyll, no React, no Bootstrap, no Vite, no Webpack, no fancy shi.
 
-i also want this site to:
-- be **responsive**
-- **not** make requests to **external cdn's and servers** and when it is necessary display a warning
-- have a **transparent cards theme**
-- be super secure (i host it on aws and use cloudflare bot management along with aws waf captcha for security)
+### I also want this site to:
+- Be **responsive**,
+- **Not** make requests to **external cdn's and servers** and when it is necessary display a warning,
+- Have a **transparent cards theme**,
+- Be super secure (I host it on AWS and use Cloudflare Bot Management along with AWS WAF Captcha for security)
 
-for the current moment ive decided to remove my blog, maybe i will bring it back in the future
+### Why I love my website?
+- It loads motherfucking fast with total data transfer around just 25kb.
+- Its code is fucking clean. No minifying, no code splitting.
+- It looks cool. You have to admit it.
+- It doesn't use any framework. Do I still have to explain why?
+- It doesn't use &lt;div&gt; exclusively. There are many other awesome tags like &lt;article&gt;, &lt;section&gt; etc.
+- It's minimalist, and I love it.
 
-*javascript will be used very little, only for some easter eggs, animated <title> and basic stuff.
-<br>
-it will **NEVER** be required to browse my website, i respect decision of users who have blocked scripts in their browser
+---
+
+*Javascript will be used very little, only for some easter eggs, animated &lt;title&gt; and basic stuff.
+
+It will **NEVER** be required to browse my website, i respect decision of users who have blocked scripts in their browser
