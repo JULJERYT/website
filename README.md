@@ -1,7 +1,7 @@
 # jul's website
 Hi, jul here!
 
-Inspired by [this website](https://justfuckingusehtml.com/), I wanted my website written HTML, CSS and vanilla JS* **just like in good old days** - no Tailwind, no NextJS, no Nuxt, no Astro, no Svelte, no Remix, no Vue, no Hugo, no Jekyll, no React, no Bootstrap, no Vite, no Webpack, no fancy shi.
+Inspired by [this website](https://justfuckingusehtml.com/), I wanted my website written in HTML, CSS and vanilla JS* **just like in good old days** - no Tailwind, no NextJS, no Nuxt, no Astro, no Svelte, no Remix, no Vue, no Hugo, no Jekyll, no React, no Bootstrap, no Vite, no Webpack, no fancy shi.
 
 ### I also want this site to:
 - Be **responsive**,
