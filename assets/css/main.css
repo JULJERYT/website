@@ -184,6 +184,10 @@ section {
     opacity: 0;
 }
 
+.quote-icon2 {
+    display: none;
+}
+
 .quote-title {
     font-size: 1.5rem;
     font-weight: bold;
@@ -442,9 +446,17 @@ footer {
     }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 450px) {
     .quote-icon {
         display: none;
+    }
+
+    .quote-line {
+        font-size: 1rem;
+    }
+
+    .quote-icon2 {
+        display: inline;
     }
 
     .socials {
