@@ -1,48 +1,52 @@
 // update status from internal api (api.juljeryt.pl)
 // its source code isnt public for now
-async function updateStatus() {
+// fetch all data from an ass endpoint
+// wonderful name isnt it?
+async function updateAss() {
     try {
-        const response = await fetch('https://api.juljeryt.pl/status');
+        const response = await fetch('https://api.juljeryt.pl/ass');
         const data = await response.json();
 
-        if (!data.status) return;
-
-        let statusText;
-        switch (data.status) {
-            case 'online':
-                statusText = 'Online 🟢';
-                break;
-            case 'dnd':
-                statusText = 'Do Not Disturb ⛔';
-                break;
-            case 'idle':
-                statusText = 'Idle 🌙';
-                break;
-            case 'offline':
-                statusText = 'Offline 🔴';
-                break;
-            default:
-                return;
+        // status
+        if (data.status) {
+            let statusText;
+            switch (data.status) {
+                case 'online':
+                    statusText = 'Online 🟢';
+                    break;
+                case 'dnd':
+                    statusText = 'Do Not Disturb ⛔';
+                    break;
+                case 'idle':
+                    statusText = 'Idle 🌙';
+                    break;
+                case 'offline':
+                    statusText = 'Offline 🔴';
+                    break;
+                default:
+                    statusText = '';
+            }
+            if (statusText) {
+                document.getElementById('status1').textContent = statusText;
+                document.getElementById("status1").classList.remove("hidden");
+                document.getElementById('status2').textContent = statusText;
+                document.getElementById("status2").classList.remove("hidden");
+            }
         }
 
-        document.getElementById('status1').textContent = statusText;
-        document.getElementById("status1").classList.remove("hidden");
-        document.getElementById('status2').textContent = statusText;
-        document.getElementById("status2").classList.remove("hidden");
-    } catch (error) {
-        console.error('failed to fetch status:', error);
-    }
-}
+        // visitors
+        if (typeof data.visitors === 'number') {
+            document.getElementById('visitors2').textContent = data.visitors;
+            document.getElementById('visitors1').classList.remove('hidden');
+        }
 
-async function updateVisitors() {
-    try {
-        const response = await fetch('https://api.juljeryt.pl/counter');
-        const data = await response.json();
-        if (typeof data.visitors !== 'number') return;
-        document.getElementById('visitors2').textContent = data.visitors;
-        document.getElementById('visitors1').classList.remove('hidden');
+        // weather
+        if (typeof data.temperature_celsius === 'number' && typeof data.temperature_fahrenheit === 'number') {
+            document.getElementById('weather2').textContent = `${data.temperature_celsius}°C · ${data.temperature_fahrenheit}°F`;
+            document.getElementById("weather1").classList.remove("hidden");
+        }
     } catch (error) {
-        console.error('failed to fetch visitors:', error);
+        console.error('failed to fetch data:', error);
     }
 }
 
@@ -81,33 +85,17 @@ function updateTime() {
     });
 }
 
-// update weather from internal api (api.juljeryt.pl)
-// its source code isnt public for now
-async function updateWeather() {
-    try {
-        const response = await fetch('https://api.juljeryt.pl/weather');
-        const data = await response.json();
-        if (typeof data.temperature_celsius !== 'number' || typeof data.temperature_fahrenheit !== 'number') return;
-        document.getElementById('weather2').textContent = `${data.temperature_celsius}°C · ${data.temperature_fahrenheit}°F`;
-        document.getElementById("weather1").classList.remove("hidden");
-    } catch (error) {
-        console.error('failed to fetch weather:', error);
-    }
-}
-
-// wait for DOM
+// wait for dom
 window.addEventListener('DOMContentLoaded', () => {
     detectClockFormat();
     animateTitle();
-    updateVisitors();
     setInterval(updateTime, 60000);
     document.getElementById("dynamic-header").classList.remove("hidden");
     document.getElementById('static-header').classList.add("hidden");
     document.getElementById('warning').classList.add("hidden");
 
     setTimeout(() => {
-        updateStatus();
+        updateAss();
         updateTime();
-        updateWeather();
     }, 1000);
 });
