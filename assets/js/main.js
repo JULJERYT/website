@@ -1,10 +1,10 @@
-// update status from internal api (api.juljeryt.pl)
+// update status from internal api (api.jul.pl)
 // its source code isnt public for now
 // fetch all data from an ass endpoint
 // wonderful name isnt it?
 async function updateAss() {
     try {
-        const response = await fetch('https://api.juljeryt.pl/ass');
+        const response = await fetch('https://api.jul.rip/ass');
         const data = await response.json();
 
         // status
