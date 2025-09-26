@@ -27,8 +27,8 @@
     <meta name="twitter:image" content="https://jul.rip/assets/img/banner.jpg">
     <meta name="twitter:title" content="jul.rip">
     <meta name="twitter:description" content="jul's place to share his thoughts and projects">
-    <!-- todo: contact form, delete unique visitors because now bots are 60% of all traffic and i dont know how to filter them without overworking myself  -->
-    <!-- already done: smaller favicon.ico (it was bigger than all assets i just made it transparent 1x1px), when js disabled display "Javascript disabled" on header-2, hover effect on cards, cards style from ios 26 liquid glass, dark blue theme, visitors counter, smaller quote font size on phones, instead of three separate endpoints (weather, counter and status), everything will be in one endpoint -->
+    <!-- todo: contact form -->
+    <!-- already done: delete unique visitors because now bots and crawlers are 60% of all traffic and i dont know how to filter them without overworking myself, smaller favicon.ico (it was bigger than all assets i just made it transparent 1x1px), when js disabled display "Javascript disabled" on header-2, hover effect on cards, cards style from ios 26 liquid glass, dark blue theme, visitors counter, smaller quote font size on phones, instead of three separate endpoints (weather, counter and status), everything will be in one endpoint -->
     <!-- cards to add: projects, favourite stuff, and maybe blog and maybe donate -->
     <!-- i want to keep code of this website clean and simple, not like the last project where i used hugo and 40 tags werent even closed -->
 </head>
@@ -40,9 +40,7 @@
     </div>
     <div class="header-2">
         <div class="hidden" id="dynamic-header">
-            <strong class="hidden" id="status1"></strong>
-            <span>•</span>
-            <span class="hidden" id="visitors1">Unique visitors: <strong id="visitors2">Loading</strong></span>
+            <strong class="hidden" id="motd"></strong>
         </div>
         <div id="static-header">
             <strong>Javascript disabled ⚠️</strong>
@@ -68,7 +66,7 @@
                     <path fill="#1d9bf0" d="M20.396 11a3.49 3.49 0 0 0-2.008-3.062c.223-.607.27-1.264.14-1.897a3.47 3.47 0 0 0-.882-1.687c-.47-.445-1.053-.75-1.687-.882s-1.29-.083-1.897.14a3.47 3.47 0 0 0-1.245-1.44A3.5 3.5 0 0 0 11 1.604a3.46 3.46 0 0 0-3.053 2.008 3.47 3.47 0 0 0-1.902-.14c-.635.13-1.22.436-1.69.882a3.46 3.46 0 0 0-.734 3.584A3.5 3.5 0 0 0 1.604 11a3.5 3.5 0 0 0 .574 1.817c.356.54.856.972 1.443 1.245a3.46 3.46 0 0 0-.144 1.896 3.47 3.47 0 0 0 .877 1.688 3.5 3.5 0 0 0 3.584.742A3.49 3.49 0 0 0 11 20.396a3.48 3.48 0 0 0 3.062-2.007 3.335 3.335 0 0 0 4.326-4.327A3.49 3.49 0 0 0 20.396 11M9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"/>
                 </svg>
             </div>
-            <strong class="hidden" id="status2"></strong>
+            <strong class="hidden" id="status"></strong>
         </article>
         <article class="card card1-2" id="second-card">
             <!-- about -->

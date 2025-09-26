@@ -27,17 +27,9 @@ async function updateAss() {
                     statusText = '';
             }
             if (statusText) {
-                document.getElementById('status1').textContent = statusText;
-                document.getElementById("status1").classList.remove("hidden");
-                document.getElementById('status2').textContent = statusText;
-                document.getElementById("status2").classList.remove("hidden");
+                document.getElementById('status').textContent = statusText;
+                document.getElementById("status").classList.remove("hidden");
             }
-        }
-
-        // visitors
-        if (typeof data.visitors === 'number') {
-            document.getElementById('visitors2').textContent = data.visitors;
-            document.getElementById('visitors1').classList.remove('hidden');
         }
 
         // weather
@@ -50,11 +42,66 @@ async function updateAss() {
     }
 }
 
+// get a random motd based on the current time
+function getMotd() {
+    const now = new Date();
+    const hours = now.getHours();
+    let motdList;
+
+    if (hours >= 7 && hours < 11) {
+        // 07:00 - 11:00
+        motdList = [
+            "🌻 Good morning, ☀️ Have a nice day",
+            "🌅 Rise and shine",
+            "☕ Time for coffee"
+        ];
+    } else if (hours >= 11 && hours < 14) {
+        // 11:00 - 14:00
+        motdList = [
+            "🍽️ Good noon",
+            "😋 Enjoy your lunch",
+            "🌞 Keep smiling",
+            "🥗 Take a break"
+        ];
+    } else if (hours >= 14 && hours < 18) {
+        // 14:00 - 18:00
+        motdList = [
+            "🌤️ Good afternoon",
+            "💪 Keep it up",
+            "🌺 Stay positive",
+            "🍵 Have a tea break"
+        ];
+    } else if (hours >= 18 && hours < 22) {
+        // 18:00 - 22:00
+        motdList = [
+            "🌇 Good evening",
+            "🛋️ Relax and unwind",
+            "🍕 Dinner time",
+            "🌆 Hope you had a good day"
+        ];
+    } else {
+        // 22:00 - 07:00
+        motdList = [
+            "🌙 Good night",
+            "😴 Sleep well",
+            "🌌 Sweet dreams",
+            "💤 Time to rest"
+        ];
+    }
+
+    return motdList[Math.floor(Math.random() * motdList.length)];
+}
+
+function updateMotd() {
+    document.getElementById('motd').textContent = getMotd();
+    document.getElementById('motd').classList.remove('hidden');
+}
+
 // animated title
 function animateTitle() {
-    var index = 0;
-    var reverse = false;
-    var animatedTitle = "jul's website";
+    let index = 0;
+    let reverse = false;
+    const animatedTitle = "jul's website";
     setInterval(function () {
         index = (index + (reverse ? -1 : 1)) % (animatedTitle.length + 1);
         if (index === 0 || index === animatedTitle.length) reverse = !reverse;
@@ -97,5 +144,6 @@ window.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         updateAss();
         updateTime();
+        updateMotd();
     }, 1000);
 });
