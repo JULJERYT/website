@@ -133,7 +133,7 @@ function updateTime() {
 }
 
 function animatedFavicon() {
-    const emojis = ["🍕","🍔","🌭","🍟","🌮","🌯","🥙","🍗","🥪","🥞","🍪","🧁","🍦","🍨","🍫"];
+    const emojis = ["🍕", "🍔", "🌭", "🍟", "🌮", "🌯", "🥙", "🍗", "🥪", "🥞", "🍪", "🧁", "🍦", "🍨", "🍫"];
     let i = 0;
 
     function setFavicon(emoji) {
