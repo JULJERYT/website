@@ -132,6 +132,27 @@ function updateTime() {
     });
 }
 
+function animatedFavicon() {
+    const emojis = ["🍕","🍔","🌭","🍟","🌮","🌯","🥙","🍗","🥪","🥞","🍪","🧁","🍦","🍨","🍫"];
+    let i = 0;
+
+    function setFavicon(emoji) {
+        const svg = `
+            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+                <text y='.9em' font-size='90'>${emoji}</text>
+            </svg>`;
+        const link = document.querySelector("link[rel='icon']") || document.createElement("link");
+        link.rel = "icon";
+        link.href = "data:image/svg+xml," + encodeURIComponent(svg);
+        document.head.appendChild(link);
+    }
+
+    setInterval(() => {
+        setFavicon(emojis[i]);
+        i = (i + 1) % emojis.length;
+    }, 1000);
+}
+
 // wait for dom
 window.addEventListener('DOMContentLoaded', () => {
     detectClockFormat();
@@ -140,10 +161,10 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById("dynamic-header").classList.remove("hidden");
     document.getElementById('static-header').classList.add("hidden");
     document.getElementById('warning').classList.add("hidden");
-
     setTimeout(() => {
         updateAss();
         updateTime();
         updateMotd();
     }, 1000);
+    animatedFavicon();
 });
