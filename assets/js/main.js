@@ -132,6 +132,45 @@ function updateTime() {
     });
 }
 
+// click on span.path ->  copy current url to clipboard
+function setupPathCopy() {
+    const path = document.querySelector('.path');
+    if (path) {
+        path.addEventListener('click', async () => {
+            try {
+                // copy current url to clipboard
+                await navigator.clipboard.writeText(window.location.href);
+
+                // store original text and color
+                const originalText = path.textContent;
+                const originalColor = path.style.color;
+
+                // show green copied text
+                path.textContent = 'copied';
+                path.style.color = '#4CAF50';
+
+                // revetr after 3 seconds
+                setTimeout(() => {
+                    path.textContent = originalText;
+                    path.style.color = originalColor;
+                }, 3000);
+
+            } catch (err) {
+                // show user that error happend
+                const originalText = path.textContent;
+                const originalColor = path.style.color;
+                path.textContent = 'error';
+                path.style.color = '#af4c4c';
+
+                setTimeout(() => {
+                    path.textContent = originalText;
+                    path.style.color = originalColor;
+                }, 3000);
+            }
+        });
+    }
+}
+
 function animatedFavicon() {
     const emojis = ["🍕", "🍔", "🌭", "🍟", "🌮", "🌯", "🥙", "🍗", "🥪", "🥞", "🍪", "🧁", "🍦", "🍨", "🍫"];
     let i = 0;
@@ -165,6 +204,7 @@ window.addEventListener('DOMContentLoaded', () => {
         updateAss();
         updateTime();
         updateMotd();
-    }, 1000);
+    }, 100);
+    setupPathCopy();
     animatedFavicon();
 });
