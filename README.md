@@ -11,12 +11,12 @@ Jekyll, no React, no Bootstrap, no Vite, no Webpack, no fancy shi.
 - Be **responsive**, 📱
 - **Not** make requests to **external cdn's and servers** and when it is necessary display a warning,
 - Have a **transparent cards theme**, 🪟
-- Be super secure (I host it on AWS and use Cloudflare Bot Management along with AWS WAF Captcha for security) 🔐
+- Be super secure 🔐
 
 ### Why I love my website?
 
-- It loads motherfucking fast with total data transfer around just **15kb** 😲
-- Its code is **fucking clean** ✨ No minifying, no code splitting.
+- It loads VERY fast with total data transfer around just **15kb** 😲
+- Its code is **clean** ✨ No minifying, no code splitting.
 - It looks cool 😎 You have to admit it.
 - It doesn't use any framework. Do I still have to explain why?
 - It doesn't use &lt;div&gt; exclusively. There are many other awesome tags like &lt;article&gt;, &lt;section&gt; etc.
