@@ -1,5 +1,5 @@
 html {
-    background: linear-gradient(135deg, #0f172a 0%, #1e40af 100%);
+    background: linear-gradient(135deg, #0a0a0a 0%, #202020 100%);
     min-height: 100vh;
 }
 
@@ -37,9 +37,9 @@ header {
     font-size: 0.8rem;
     line-height: 1.2rem;
     padding: 0.5rem 1rem;
-    background: rgba(15, 23, 42, 0.6);
+    background: rgba(20, 20, 20, 0.6);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(148, 163, 184, 0.2);
+    border: 1px solid rgba(200, 200, 200, 0.2);
     border-radius: 0.35rem;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
     animation: slideup 0.69s ease-out forwards;
@@ -50,17 +50,15 @@ header {
 .julswebsite {
     font-size: 2rem;
     font-weight: bold;
-    background: linear-gradient(to right, #22d3ee, #2563eb);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
 }
 
 .path {
     margin-left: 1rem;
     font-size: 0.8rem;
-    background-color: rgba(30, 58, 138, 0.7);
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.08);
     padding: 0.25rem 0.5rem;
     border-radius: 0.25rem;
     cursor: pointer;
@@ -75,9 +73,9 @@ section {
 
 .card {
     font-size: 1rem;
-    background: rgba(15, 23, 42, 0.6);
+    background: rgba(20, 20, 20, 0.6);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(148, 163, 184, 0.2);
+    border: 1px solid rgba(200, 200, 200, 0.2);
     grid-column: span 1;
     padding: 1.5rem;
     border-radius: 0.75rem;
@@ -88,7 +86,7 @@ section {
 }
 
 .card:hover {
-    border-color: rgba(148, 163, 184, 0.5);
+    border-color: rgba(255, 255, 255, 0.5)
 }
 
 .card1-1 {
@@ -152,8 +150,8 @@ section {
 .jul {
     font-size: 2rem;
     font-weight: bold;
-    color: #22d3ee;
-    text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
     margin-bottom: 1rem;
 }
 
@@ -226,15 +224,6 @@ section {
 .quote-list {
     list-style-type: none;
     margin-left: -2rem;
-}
-
-footer a {
-    color: rgb(191 219 254);
-    text-decoration: underline;
-}
-
-footer a:hover {
-    color: rgb(147 197 253);
 }
 
 @keyframes fadein {
@@ -315,13 +304,22 @@ footer a:hover {
 
 footer {
     text-align: center;
-    color: rgb(147 197 253 / 0.8);
+    color: rgba(255, 255, 255, 0.8);
     margin-top: 3rem;
     font-size: 0.9rem;
     line-height: 1.2rem;
-    text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
     opacity: 0;
     animation: longerfadein 2s ease-in-out forwards;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .title1 {
