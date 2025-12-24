@@ -313,12 +313,12 @@ footer {
     animation: longerfadein 2s ease-in-out forwards;
 }
 
-footer a {
+a {
     color: #ffffff;
     text-decoration: underline;
 }
 
-footer a:hover {
+a:hover {
     color: rgba(255, 255, 255, 0.8);
 }
 
