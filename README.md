@@ -23,10 +23,9 @@ Jekyll, no React, no Bootstrap, no Vite, no Webpack, no fancy shi.
 - It's minimalist, and I love it.
 
 > [!NOTE]  
-> I use [Umami](https://github.com/umami-software/umami) which is an open source website analytics tool that I run on my
-> own server.
-> It does NOT track you and does NOT use cookies.
-> I won't share any data with anyone.
+> I use self-hosted analytics tool to monitor website traffic.
+> It does NOT track you, does NOT use cookies and I do NOT share any data with third parties.
+> (I might brag about my website stats to my friends at the nightclub, sorry bout that)
 
 ---
 
