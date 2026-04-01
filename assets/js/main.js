@@ -49,7 +49,8 @@ function getMotd() {
     if (hours >= 7 && hours < 11) {
         // 07:00 - 11:00
         motdList = [
-            "🌻 Good morning, ☀️ Have a nice day",
+            "🌻 Good morning",
+            "☀️ Have a nice day",
             "🌅 Rise and shine",
             "☕ Time for coffee"
         ];
