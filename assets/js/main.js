@@ -1,49 +1,17 @@
-// fetch all data from an ass endpoint
-// idk what else to call it
-async function updateAss() {
-    try {
-        const response = await fetch('https://jul.rip/api/ass');
-        const data = await response.json();
-
-        // status
-        if (data.status) {
-            let statusText;
-            switch (data.status) {
-                case 'online':
-                    statusText = 'Online 🟢';
-                    break;
-                case 'dnd':
-                    statusText = 'Do Not Disturb ⛔';
-                    break;
-                case 'idle':
-                    statusText = 'Idle 🌙';
-                    break;
-                case 'offline':
-                    statusText = 'Offline 🔴';
-                    break;
-                default:
-                    statusText = '';
-            }
-            if (statusText) {
-                document.getElementById('status').textContent = statusText;
-                document.getElementById("status").classList.remove("hidden");
-            }
-        }
-
-        // weather
-        if (typeof data.temperature_celsius === 'number' && typeof data.temperature_fahrenheit === 'number') {
-            document.getElementById('weather2').textContent = `${data.temperature_celsius}°C · ${data.temperature_fahrenheit}°F`;
-            document.getElementById("weather1").classList.remove("hidden");
-        }
-    } catch (error) {
-        console.error('failed to fetch data:', error);
-    }
+// instead of fetching status from the server
+// we just assume that im sleeping between 23:00 and 07:00 sharp
+// shhh nobody has to know
+function updateStatus() {
+    const hours = Number(new Date().toLocaleString('en-US', {timeZone: 'Europe/Warsaw', hour: '2-digit', hour12: false}));
+    
+    let statusText = (hours >= 23 || hours < 7) ? '😴 Sleeping' : '🟢 Online';
+    document.getElementById('status').textContent = statusText;
+    document.getElementById('status').classList.remove('hidden');
 }
 
 // get a random motd based on the current time
 function getMotd() {
-    const now = new Date();
-    const hours = now.getHours();
+    const hours = new Date().getHours();
     let motdList;
 
     if (hours >= 7 && hours < 11) {
@@ -200,7 +168,7 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('static-header').classList.add("hidden");
     document.getElementById('warning').classList.add("hidden");
     setTimeout(() => {
-        updateAss();
+        updateStatus();
         updateTime();
         updateMotd();
     }, 100);
